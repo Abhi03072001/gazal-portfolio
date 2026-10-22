@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F8FAFC;
+    color: #202938;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #101828;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbar in Cool Grey + Lavender */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DCE3EC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A5A6F6;
+}
+
+/* Clean UI Utilities from style guide */
+.card-clean {
+  background: #FFFFFF;
+  border: 1px solid #DCE3EC;
+  box-shadow: 0 4px 20px -2px rgba(16, 24, 40, 0.04);
+}
+
+.card-clean:hover {
+  border-color: #A5A6F6;
+  box-shadow: 0 12px 30px -4px rgba(165, 166, 246, 0.18);
+}
