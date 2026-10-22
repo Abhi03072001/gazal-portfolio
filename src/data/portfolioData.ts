@@ -1,3 +1,10 @@
+export const baseAsset = (path: string): string => {
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${cleanBase}${cleanPath}`;
+};
+
 export interface CaseStudy {
   id: string;
   number: string;
@@ -46,7 +53,7 @@ export const DESIGNER_INFO = {
   summary: "Multidisciplinary designer specializing in UI design, scalable visual systems, high-converting e-commerce storytelling, and AI-accelerated creative workflows. I turn business requirements into visual systems that are useful, consistent, and ready to scale.",
   philosophy: "Design with a reason. A practice shaped by clarity, consistency, and business context. AI helps me move faster, explore more options, and deliver quicker—while keeping creative direction, brand accuracy, and final refinement strictly human-led.",
   motto: "Design should make the value visible.",
-  portrait: "/assets/gazal-soni-portrait.jpg",
+  portrait: baseAsset("/assets/gazal-soni-portrait.jpg"),
   contact: {
     email: "gazalsonisoni@gmail.com",
     phone: "+91 62848 22066",
@@ -84,8 +91,8 @@ export const LIVE_CLIENT_SITES = [
     impact: "+40% Conversion Improvement",
     tags: ["E-Commerce UI", "Themed Storytelling", "Landing Pages"],
     description: "Designed dessert-inspired, fantasy-themed landing pages and shopping journeys including the viral 'Unicorn Fruit' and seasonal collections, harmonizing rich visual storytelling with frictionless product purchase flows.",
-    previewImg: "/assets/real/website_banners/home-unicorn-fruit-desktop.jpg",
-    fullViewImg: "/assets/real/some_ui_designs/Truly-land.jpg",
+    previewImg: baseAsset("/assets/real/website_banners/home-unicorn-fruit-desktop.jpg"),
+    fullViewImg: baseAsset("/assets/real/some_ui_designs/Truly-land.jpg"),
   },
   {
     name: "FirstFlowAI",
@@ -95,8 +102,8 @@ export const LIVE_CLIENT_SITES = [
     impact: "Complete Brand & CRM System",
     tags: ["Product Identity", "CRM Dashboard", "Marketing UI"],
     description: "Architected a connected visual identity, marketing landing experience, and modular CRM dashboard system for an AI-first product, making dense sales pipelines and scheduling feel intuitive and actionable.",
-    previewImg: "/assets/real/first_flow_ai_website_ui_and_crm_design/Homepage-v2_website_UI_design.jpg",
-    fullViewImg: "/assets/real/first_flow_ai_website_ui_and_crm_design/Firstflowai-CRM.jpg",
+    previewImg: baseAsset("/assets/real/first_flow_ai_website_ui_and_crm_design/Homepage-v2_website_UI_design.jpg"),
+    fullViewImg: baseAsset("/assets/real/first_flow_ai_website_ui_and_crm_design/Firstflowai-CRM.jpg"),
   },
   {
     name: "Mono Bioholistic",
@@ -106,8 +113,8 @@ export const LIVE_CLIENT_SITES = [
     impact: "Revenue Scaled ₹50K → ₹3-4 Lakh/mo",
     tags: ["Brand System", "MINO Character Design", "Full-Funnel Ads"],
     description: "Led comprehensive brand transformation across web, commerce catalog, and advertising. Created the recognizable 'MINO' 3D mascot system and full-funnel TOFU/MOFU/BOFU campaign framework that powered multi-fold monthly revenue growth.",
-    previewImg: "/assets/real/website_banners/Mono_homepage_banners_Mono_.jpg",
-    fullViewImg: "/assets/real/website_banners/science_backed_banner_Mono.jpg",
+    previewImg: baseAsset("/assets/real/website_banners/Mono_homepage_banners_Mono_.jpg"),
+    fullViewImg: baseAsset("/assets/real/website_banners/science_backed_banner_Mono.jpg"),
   }
 ];
 
@@ -138,49 +145,49 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Science-Backed Visual Direction",
         description: "Moving beyond isolated assets to a consistent customer journey: pairing entry points (skin concerns) with proof points (clinical product science).",
-        image: "/assets/real/website_banners/science_backed_banner_Mono.jpg",
+        image: baseAsset("/assets/real/website_banners/science_backed_banner_Mono.jpg"),
         badge: "Brand Architecture"
       },
       {
         title: "MINO Superhero Character Design",
         description: "Giving the brand a recognizable face. A friendly character with water blaster makes clinical topics approachable and drives strong brand recall.",
-        image: "/assets/real/carecreature_design_face_pf_mono_brand/ChatGPT_Image_Aug_12__2026__12_36_57_PM.png",
+        image: baseAsset("/assets/real/carecreature_design_face_pf_mono_brand/ChatGPT_Image_Aug_12__2026__12_36_57_PM.png"),
         badge: "3D Character System"
       },
       {
         title: "Poppy Care-Creature Companion",
         description: "Exploration of expressive skin-care creature characters to anthropomorphize acne concerns and guide product education.",
-        image: "/assets/real/carecreature_design_face_pf_mono_brand/poppy.png",
+        image: baseAsset("/assets/real/carecreature_design_face_pf_mono_brand/poppy.png"),
         badge: "Character Universe"
       },
       {
         title: "Commerce Catalogue Storytelling",
         description: "From raw source photo to engaging product story: benefit communication, ingredient storytelling, and clear usage guidance for web & Myntra.",
-        image: "/assets/real/mono_product_catalouge_design_for_mono_site__myntra_and_other_platforms/1.jpg",
+        image: baseAsset("/assets/real/mono_product_catalouge_design_for_mono_site__myntra_and_other_platforms/1.jpg"),
         badge: "E-Commerce Catalog"
       },
       {
         title: "TOFU Awareness: 'Still Fighting Acne?'",
         description: "Top-of-funnel concern-led ad creative earning consumer attention through immediate problem empathy and high-trust imagery.",
-        image: "/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Fight_Acne1080_1080.png",
+        image: baseAsset("/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Fight_Acne1080_1080.png"),
         badge: "TOFU Awareness"
       },
       {
         title: "MOFU Education: 'Skin Ki Care Bhi'",
         description: "Middle-of-funnel educational creative establishing ingredient trust, barrier support, and hydration proof points.",
-        image: "/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Mofu_1080_1080.png",
+        image: baseAsset("/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Mofu_1080_1080.png"),
         badge: "MOFU Education"
       },
       {
         title: "BOFU Conversion: Festive Gift Sets",
         description: "Bottom-of-funnel conversion creative featuring curated Raksha Bandhan gift boxes with transparent offer terms and clear CTA.",
-        image: "/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Raksha_bhandhan_sale.png",
+        image: baseAsset("/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Raksha_bhandhan_sale.png"),
         badge: "BOFU Conversion"
       },
       {
         title: "Clearbiotics Studio Product Mockup",
         description: "AI-assisted 3D studio render for Clearbiotics skin supplement with botanical elements and pristine product lighting.",
-        image: "/assets/real/product_mockup_designs/Clearbiotics.png",
+        image: baseAsset("/assets/real/product_mockup_designs/Clearbiotics.png"),
         badge: "Product Mockup"
       }
     ],
@@ -210,31 +217,31 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Unicorn Fruit Desktop Story Banner",
         description: "Indulge in the enchantment of Unicorn Fruit: blending dreamlike dessert product styling with immediate 'Shop Now' callouts.",
-        image: "/assets/real/website_banners/home-unicorn-fruit-desktop.jpg",
+        image: baseAsset("/assets/real/website_banners/home-unicorn-fruit-desktop.jpg"),
         badge: "Featured Story Banner"
       },
       {
         title: "Cooka Colada Luxury Shave Butter Banner",
         description: "Decadent coconut and pineapple product styling capturing rich texture and premium gold-accented packaging.",
-        image: "/assets/real/website_banners/COOKA-COLADA-DESKTOP-our-.jpg",
+        image: baseAsset("/assets/real/website_banners/COOKA-COLADA-DESKTOP-our-.jpg"),
         badge: "Product Showcase"
       },
       {
         title: "Truly Land Full Page Architecture",
         description: "Full-length website view preserving complete information architecture, visual rhythm, and seamless commerce journeys.",
-        image: "/assets/real/some_ui_designs/Truly-land.jpg",
+        image: baseAsset("/assets/real/some_ui_designs/Truly-land.jpg"),
         badge: "Full-Page UI"
       },
       {
         title: "Product Landing Page Design System",
         description: "Modular conversion landing layout balancing benefit grids, ingredient proofing, and sticky checkout actions.",
-        image: "/assets/real/some_ui_designs/truly-landing-design-2.jpg",
+        image: baseAsset("/assets/real/some_ui_designs/truly-landing-design-2.jpg"),
         badge: "Landing Page Architecture"
       },
       {
         title: "Truly Beauty E-Commerce Store UI",
         description: "Complete storefront homepage featuring seasonal hero carousels, bundle showcases, and social UGC proof.",
-        image: "/assets/real/some_ui_designs/truly.jpg",
+        image: baseAsset("/assets/real/some_ui_designs/truly.jpg"),
         badge: "Storefront UI"
       }
     ],
@@ -264,31 +271,31 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Marketing Website UI & Value Proposition",
         description: "Transform Data Into Actionable Insights: High-contrast data visualizations, clean logo suite, and dashboard hero previews.",
-        image: "/assets/real/first_flow_ai_website_ui_and_crm_design/Homepage-v2_website_UI_design.jpg",
+        image: baseAsset("/assets/real/first_flow_ai_website_ui_and_crm_design/Homepage-v2_website_UI_design.jpg"),
         badge: "Marketing UI"
       },
       {
         title: "FirstFlowAI CRM Dashboard Suite",
         description: "Balancing dense data with intuitive actions: Schedule overview, chat system, lead conversion metrics, and stable sidebar navigation.",
-        image: "/assets/real/first_flow_ai_website_ui_and_crm_design/Firstflowai-CRM.jpg",
+        image: baseAsset("/assets/real/first_flow_ai_website_ui_and_crm_design/Firstflowai-CRM.jpg"),
         badge: "Dashboard Architecture"
       },
       {
         title: "Analytics & Pipeline Insights",
         description: "Interactive data visualization screens tracking response rates, conversion trends, and revenue projections.",
-        image: "/assets/real/first_flow_ai_website_ui_and_crm_design/Dashboard-analystics.jpg",
+        image: baseAsset("/assets/real/first_flow_ai_website_ui_and_crm_design/Dashboard-analystics.jpg"),
         badge: "Data Visualization"
       },
       {
         title: "Schedule & Calendar Workflows",
         description: "High-density timeline planner enabling sales reps to coordinate meetings, follow-ups, and customer touchpoints seamlessly.",
-        image: "/assets/real/first_flow_ai_website_ui_and_crm_design/Dashboard-calendar.jpg",
+        image: baseAsset("/assets/real/first_flow_ai_website_ui_and_crm_design/Dashboard-calendar.jpg"),
         badge: "Calendar UI"
       },
       {
         title: "FirstFlowAI Brand Identity Suite",
         description: "Unified logo family across dark, light, and inverted responsive applications with strict geometry rules.",
-        image: "/assets/real/first_flow_ai_website_ui_and_crm_design/Final_logo_.jpg",
+        image: baseAsset("/assets/real/first_flow_ai_website_ui_and_crm_design/Final_logo_.jpg"),
         badge: "Brand Identity"
       }
     ],
@@ -318,25 +325,25 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Workbook Series Cover Architecture",
         description: "Avidator's Guide to Statistics (Foundations of Data and Analysis, Volume 1): Cover hierarchy, booster kit callout, and mascot framing.",
-        image: "/assets/real/london_school_of_emerging_tecnology_work_book_math_s_book_design/000.-Series-covers-2-7-book.jpg",
+        image: baseAsset("/assets/real/london_school_of_emerging_tecnology_work_book_math_s_book_design/000.-Series-covers-2-7-book.jpg"),
         badge: "Publication Cover"
       },
       {
         title: "Student Booster Brochure & Quiz System",
         description: "Interactive learning leaflet featuring quiz formats, character reward badges, and structured study schedules.",
-        image: "/assets/real/brochur_or_leaflet/Avidator-brochure--rework.jpg",
+        image: baseAsset("/assets/real/brochur_or_leaflet/Avidator-brochure--rework.jpg"),
         badge: "Student Collateral"
       },
       {
         title: "Avidator Learning Products Social Creative",
         description: "Promotional campaign offering 30% off curriculum booster materials to boost children's academic confidence.",
-        image: "/assets/real/social_media_posters/30-OFF-on-All-Avidator-Learning-Products.jpg",
+        image: baseAsset("/assets/real/social_media_posters/30-OFF-on-All-Avidator-Learning-Products.jpg"),
         badge: "Campaign Creative"
       },
       {
         title: "Avidator Christmas 2025 Seasonal Campaign",
         description: "Festive holiday social campaign with themed typography, seasonal discounts, and branded character decorations.",
-        image: "/assets/real/social_media_posters/AVIDATOR-CHRISTMAS-SPECIAL-2025.jpg",
+        image: baseAsset("/assets/real/social_media_posters/AVIDATOR-CHRISTMAS-SPECIAL-2025.jpg"),
         badge: "Seasonal Campaign"
       }
     ],
@@ -351,7 +358,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "ecommerce",
     categoryLabel: "E-Commerce & Amazon",
     client: "Mono / Mountainor",
-    image: "/assets/real/amazon_mountainor_products_sale_posts/Prime_day_banner_Glowcin_.png",
+    image: baseAsset("/assets/real/amazon_mountainor_products_sale_posts/Prime_day_banner_Glowcin_.png"),
     description: "High-impact 60% OFF Prime Day Amazon storefront banner for Glowcin effervescent tablets, featuring vibrant product renders and urgent promotional badging.",
     tools: ["Photoshop", "Figma", "AI Generation"]
   },
@@ -361,7 +368,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "ecommerce",
     categoryLabel: "E-Commerce & Amazon",
     client: "Mono / Mountainor",
-    image: "/assets/real/amazon_mountainor_products_sale_posts/Prime_day_banner_sea-buckthorn-v2.png",
+    image: baseAsset("/assets/real/amazon_mountainor_products_sale_posts/Prime_day_banner_sea-buckthorn-v2.png"),
     description: "Multi-channel Amazon promotional creative for Mono Sea Buckthorn capsules, highlighting clear skin, hormonal balance, and clinical efficacy.",
     tools: ["Photoshop", "Illustrator"]
   },
@@ -371,7 +378,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "ecommerce",
     categoryLabel: "E-Commerce & Amazon",
     client: "Truly Beauty",
-    image: "/assets/real/website_banners/COOKA-COLADA-DESKTOP-our-.jpg",
+    image: baseAsset("/assets/real/website_banners/COOKA-COLADA-DESKTOP-our-.jpg"),
     description: "Decadent product styling banner capturing creamy texture and premium packaging for Truly Beauty's Cooka Colada collection.",
     tools: ["Photoshop", "Figma"]
   },
@@ -381,7 +388,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "campaign",
     categoryLabel: "Campaigns & Social",
     client: "Mono / Mountainor",
-    image: "/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Fight_Acne1080_1080.png",
+    image: baseAsset("/assets/real/ad_creatives_logical_tofu__mofu_and_bofu/Fight_Acne1080_1080.png"),
     description: "Direct-response conversion ad addressing targeted acne breakouts with clear problem/solution messaging and high-trust imagery.",
     tools: ["Figma", "Photoshop", "Ad Analytics"]
   },
@@ -391,7 +398,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "print",
     categoryLabel: "Publication & Print",
     client: "Avidator UK",
-    image: "/assets/real/brochur_or_leaflet/Avidator-brochure--rework.jpg",
+    image: baseAsset("/assets/real/brochur_or_leaflet/Avidator-brochure--rework.jpg"),
     description: "Student booster kit brochure incorporating interactive quiz formats, playful rewards, and clear structured exercises.",
     tools: ["InDesign", "Illustrator"]
   },
@@ -401,7 +408,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "print",
     categoryLabel: "Publication & Print",
     client: "WEO Infotech",
-    image: "/assets/real/brochur_or_leaflet/leflet.jpg",
+    image: baseAsset("/assets/real/brochur_or_leaflet/leflet.jpg"),
     description: "B2B client acquisition leaflet: 'Build a Stunning Website with Us / Transform Your Vision into Stunning Visuals'.",
     tools: ["Illustrator", "Photoshop"]
   },
@@ -411,7 +418,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "campaign",
     categoryLabel: "Campaigns & Social",
     client: "Avidator UK",
-    image: "/assets/real/social_media_posters/30-OFF-on-All-Avidator-Learning-Products.jpg",
+    image: baseAsset("/assets/real/social_media_posters/30-OFF-on-All-Avidator-Learning-Products.jpg"),
     description: "Promotional holiday social creative offering 30% off curriculum booster materials to boost children's academic confidence.",
     tools: ["Figma", "Canva"]
   },
@@ -421,7 +428,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "campaign",
     categoryLabel: "Campaigns & Social",
     client: "Avidator UK",
-    image: "/assets/real/social_media_posters/AVIDATOR-CHRISTMAS-SPECIAL-2025.jpg",
+    image: baseAsset("/assets/real/social_media_posters/AVIDATOR-CHRISTMAS-SPECIAL-2025.jpg"),
     description: "Festive holiday email and social campaign with themed typography, seasonal discounts, and branded character decorations.",
     tools: ["Photoshop", "Illustrator"]
   },
@@ -431,7 +438,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "campaign",
     categoryLabel: "Campaigns & Social",
     client: "LSET London / Zonopact",
-    image: "/assets/real/social_media_posters/FirstFlowAI-X-LSET--Startup-Journey-Roadmap.jpg",
+    image: baseAsset("/assets/real/social_media_posters/FirstFlowAI-X-LSET--Startup-Journey-Roadmap.jpg"),
     description: "London School of Emerging Technology startup journey roadmap infographic tracking founders from ideation to investor readiness.",
     tools: ["Figma", "Illustrator"]
   },
@@ -441,7 +448,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "campaign",
     categoryLabel: "Campaigns & Social",
     client: "LSET London / Zonopact",
-    image: "/assets/real/social_media_posters/We-dont-just-teach-startups.-We-build-them.jpg",
+    image: baseAsset("/assets/real/social_media_posters/We-dont-just-teach-startups.-We-build-them.jpg"),
     description: "High-contrast brand campaign emphasizing entrepreneurship, mentorship, and practical incubation over traditional theory.",
     tools: ["Photoshop", "Figma"]
   },
@@ -451,7 +458,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "ui",
     categoryLabel: "UI & Dashboards",
     client: "Zonopact / LSET",
-    image: "/assets/real/some_ui_designs/LSET_Dashboard-2.jpg",
+    image: baseAsset("/assets/real/some_ui_designs/LSET_Dashboard-2.jpg"),
     description: "Enterprise analytics interface presenting data matrices, cohort performance graphs, and key performance indicators.",
     tools: ["Figma", "UI Design System"]
   },
@@ -461,7 +468,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "ui",
     categoryLabel: "UI & Dashboards",
     client: "Zonopact / LSET",
-    image: "/assets/real/some_ui_designs/Lset_landing_page.jpg",
+    image: baseAsset("/assets/real/some_ui_designs/Lset_landing_page.jpg"),
     description: "Conversion-optimized landing page blueprint featuring modular feature blocks, value proofing, and structured lead forms.",
     tools: ["Figma", "Adobe XD"]
   },
@@ -471,7 +478,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "creative",
     categoryLabel: "Creative & AI Art",
     client: "Creative Exploration",
-    image: "/assets/real/some_experiment_in_photoshop/double_exposer_2.png",
+    image: baseAsset("/assets/real/some_experiment_in_photoshop/double_exposer_2.png"),
     description: "Atmospheric portrait compositing blending human expression with expressive smoke, texture layering, and dramatic monochrome lighting.",
     tools: ["Adobe Photoshop"]
   },
@@ -481,7 +488,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "creative",
     categoryLabel: "Creative & AI Art",
     client: "Brand Concept",
-    image: "/assets/real/some_experiment_in_photoshop/stawberry_copy.png",
+    image: baseAsset("/assets/real/some_experiment_in_photoshop/stawberry_copy.png"),
     description: "Hyper-real commercial food manipulation depicting floating strawberry textures, liquid splashes, and appetizing beverage framing.",
     tools: ["Photoshop", "Retouching"]
   },
@@ -491,7 +498,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "creative",
     categoryLabel: "Creative & AI Art",
     client: "Concept Exploration",
-    image: "/assets/real/some_experiment_in_photoshop/TRANSPARENT_EFFECT_WATER_AND_TREE_PNG.png",
+    image: baseAsset("/assets/real/some_experiment_in_photoshop/TRANSPARENT_EFFECT_WATER_AND_TREE_PNG.png"),
     description: "Lush underwater and nature orb concept artwork fusing environmental aesthetics with digital typography.",
     tools: ["Photoshop", "AI Generative Engine"]
   },
@@ -501,7 +508,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "creative",
     categoryLabel: "Creative & AI Art",
     client: "Mono Bioholistic",
-    image: "/assets/real/carecreature_design_face_pf_mono_brand/ChatGPT_Image_Aug_12__2026__12_36_57_PM.png",
+    image: baseAsset("/assets/real/carecreature_design_face_pf_mono_brand/ChatGPT_Image_Aug_12__2026__12_36_57_PM.png"),
     description: "3D mascot design for MINO, the brand guardian equipped with a clinical water-cannon, turning acne education into an engaging narrative.",
     tools: ["AI 3D Ideation", "Photoshop", "Character Direction"]
   },
@@ -511,7 +518,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "creative",
     categoryLabel: "Creative & AI Art",
     client: "Mono Bioholistic",
-    image: "/assets/real/carecreature_design_face_pf_mono_brand/poppy.png",
+    image: baseAsset("/assets/real/carecreature_design_face_pf_mono_brand/poppy.png"),
     description: "Expressive red care-creature companion designed to embody skincare flare-ups and guide friendly product remediation.",
     tools: ["3D Character Design", "Photoshop"]
   },
@@ -521,7 +528,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "ecommerce",
     categoryLabel: "E-Commerce & Amazon",
     client: "Mono Bioholistic",
-    image: "/assets/real/product_mockup_designs/Clearbiotics.png",
+    image: baseAsset("/assets/real/product_mockup_designs/Clearbiotics.png"),
     description: "Photorealistic 3D studio mockup render for Clearbiotics skin supplement bottle with botanical chamomile backdrop.",
     tools: ["Photoshop", "AI Generation"]
   },
@@ -531,7 +538,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "ui",
     categoryLabel: "UI & Dashboards",
     client: "Truly Beauty",
-    image: "/assets/real/some_ui_designs/Truly-land.jpg",
+    image: baseAsset("/assets/real/some_ui_designs/Truly-land.jpg"),
     description: "Comprehensive full-page UI architecture for Truly Land, weaving vibrant Gen-Z beauty storytelling with friction-free checkout funnels.",
     tools: ["Figma", "UI Design System"]
   },
@@ -541,7 +548,7 @@ export const GALLERY_ITEMS: PortfolioItem[] = [
     category: "creative",
     categoryLabel: "Creative & AI Art",
     client: "Creative Exploration",
-    image: "/assets/real/some_experiment_in_photoshop/whale_copy.png",
+    image: baseAsset("/assets/real/some_experiment_in_photoshop/whale_copy.png"),
     description: "Dreamlike surrealist Photoshop manipulation placing an ethereal blue whale gliding through celestial cloud textures.",
     tools: ["Adobe Photoshop"]
   }

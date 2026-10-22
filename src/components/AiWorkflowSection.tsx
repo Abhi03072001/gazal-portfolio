@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cpu, UserCheck, Layers, Zap } from 'lucide-react';
-import { AI_WORKFLOW_STEPS, DESIGNER_INFO } from '../data/portfolioData';
+import { AI_WORKFLOW_STEPS, DESIGNER_INFO, baseAsset } from '../data/portfolioData';
 
 interface AiWorkflowSectionProps {
   onOpenImage: (imgUrl: string, title: string) => void;
@@ -139,7 +139,7 @@ export const AiWorkflowSection: React.FC<AiWorkflowSectionProps> = ({ onOpenImag
                 controls
                 preload="metadata"
                 className="w-full aspect-video object-cover"
-                src="/assets/real/videos_created_with_ai_for_ad/Mino_Skincare_Adviceee_SM_post.mp4"
+                src={baseAsset("/assets/real/videos_created_with_ai_for_ad/Mino_Skincare_Adviceee_SM_post.mp4")}
               >
                 Your browser does not support the video tag.
               </video>
@@ -154,7 +154,7 @@ export const AiWorkflowSection: React.FC<AiWorkflowSectionProps> = ({ onOpenImag
                 controls
                 preload="metadata"
                 className="w-full aspect-video object-cover"
-                src="/assets/real/videos_created_with_ai_for_ad/Kuch_meetha_ho_jaye.mp4"
+                src={baseAsset("/assets/real/videos_created_with_ai_for_ad/Kuch_meetha_ho_jaye.mp4")}
               >
                 Your browser does not support the video tag.
               </video>

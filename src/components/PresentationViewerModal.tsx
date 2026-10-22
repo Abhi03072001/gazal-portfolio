@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Download, Maximize2, Minimize2, ZoomIn, ZoomOut } from 'lucide-react';
+import { baseAsset } from '../data/portfolioData';
 
 interface PresentationViewerModalProps {
   isOpen: boolean;
@@ -64,7 +65,7 @@ export const PresentationViewerModal: React.FC<PresentationViewerModalProps> = (
   };
 
   const formattedPageNum = String(currentPage).padStart(2, '0');
-  const currentImageSrc = `/assets/pages/page_${formattedPageNum}.jpg`;
+  const currentImageSrc = baseAsset(`/assets/pages/page_${formattedPageNum}.jpg`);
 
   return (
     <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col justify-between animate-fadeIn">
@@ -156,7 +157,7 @@ export const PresentationViewerModal: React.FC<PresentationViewerModalProps> = (
                 title={`Jump to slide ${formatted}`}
               >
                 <img
-                  src={`/assets/pages/page_${formatted}.jpg`}
+                  src={baseAsset(`/assets/pages/page_${formatted}.jpg`)}
                   alt={`Slide ${formatted}`}
                   className="w-full h-full object-cover"
                 />
